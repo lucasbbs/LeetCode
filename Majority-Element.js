@@ -3,14 +3,18 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    let greatestElement = [0, 0]
+    let majority = 0
+    let res = 0
     const elements = new Map()
+    let temp = 0
     for (const num of nums) {
         const currentCount = elements.get(num) || 0
-        elements.set(num, (currentCount) + 1)
-        if (greatestElement[1] < currentCount + 1) {
-            greatestElement = [num, currentCount +1]
+        temp = currentCount +1
+        elements.set(num, temp)
+        if (res < temp) {
+            majority = num
+            res = temp
         }
     }
-    return greatestElement[0]
+    return majority
 };
