@@ -5,8 +5,7 @@
  */
 var digitSum = function(str, k) {
     let segments = []
-    while (true) {
-        if (str.length <= k) break
+    while (str.length > k) {
         for (let i = 0; i < str.length; i += k) {
             segments.push(str.slice(i, i + k));
         }
