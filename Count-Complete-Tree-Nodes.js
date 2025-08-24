@@ -14,10 +14,10 @@ var countNodes = function(root) {
     let currentCount = 0
     if (root === null) return currentCount
     const count = (root) =>{
-    currentCount++
-    if (root.left) count(root.left)
-    if (root.right) count(root.right)
-    return
+        currentCount++
+        if (root.left) count(root.left)
+        if (root.right) count(root.right)
+        return
     }
     count(root)
     return currentCount
