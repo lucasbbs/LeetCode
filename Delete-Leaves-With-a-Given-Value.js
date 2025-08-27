@@ -1,0 +1,25 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} target
+ * @return {TreeNode}
+ */
+
+var removeLeafNodes = function(root, target) {
+  if (root === null) return null;
+
+  root.left  = removeLeafNodes(root.left,  target);
+  root.right = removeLeafNodes(root.right, target);
+
+  const isLeaf = (root.left === null && root.right === null);
+  if (isLeaf && root.val === target) return null;
+
+  return root;
+};
