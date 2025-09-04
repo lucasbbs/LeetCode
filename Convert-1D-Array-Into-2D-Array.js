@@ -5,7 +5,6 @@
  * @return {number[][]}
  */
 var construct2DArray = function(original, m, n) {
-    console.log(original.length, m * n)
     if (original.length !== m * n) return []
     const output = []
     let rowCounter = 0
